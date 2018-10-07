@@ -1,0 +1,141 @@
+\documentclass[a4paper,10pt]{article}
+
+%A Few Useful Packages
+\usepackage{marvosym}
+\usepackage{fontspec} 					%for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[big]{layaureo} 				%better formatting of the A4 page
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+\usepackage{supertabular} 				%for Grades
+\usepackage{titlesec}					%custom \section
+
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+%FONTS
+\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+%%% modified for Karol Kozioł for ShareLaTeX use
+\setmainfont[
+SmallCapsFont = Fontin-SmallCaps.otf,
+BoldFont = Fontin-Bold.otf,
+ItalicFont = Fontin-Italic.otf
+]
+{Fontin.otf}
+%%%
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+%Tweak a bit the top margin
+%\addtolength{\voffset}{-1.3cm}
+
+%Italian hyphenation for the word: ''corporations''
+\hyphenation{im-pre-se}
+
+%-------------WATERMARK TEST [**not part of a CV**]---------------
+\usepackage[absolute]{textpos}
+
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+
+%--------------------BEGIN DOCUMENT----------------------
+\begin{document}
+
+%WATERMARK TEST [**not part of a CV**]---------------
+%\font\wm=''Baskerville:color=787878'' at 8pt
+%\font\wmweb=''Baskerville:color=FF1493'' at 8pt
+%{\wm 
+%	\begin{textblock}{1}(0,0)
+%		\rotatebox{-90}{\parbox{500mm}{
+%			Typeset by Alessandro Plasmati with \XeTeX\  \today\ for 
+%			{\wmweb \href{http://www.aleplasmati.comuv.com}{aleplasmati.comuv.com}}
+%		}
+%	}
+%	\end{textblock}
+%}
+
+\pagestyle{empty} % non-numbered pages
+
+\font\fb=''[cmr10]'' %for use with \LaTeX command
+
+%--------------------TITLE-------------
+\par{\centering
+		{\Huge Fabien \textsc{Ficheux}
+	}\bigskip\par}
+
+    \centering{\textsc{133 Boulevard Lafayette, 63000, Clermont Ferrand}}    
+    \\\centering{\textsc{06 51 87 20 44}}
+    \\\centering{\textsc{faficheux@gmail.com}}
+    
+    
+ \bigskip
+\par   I'm looking for an internship of six month to conclude my 2nd year of engineering school. I would like to start working in a company to prepare myself for my future work life and also to improve my technical skills. I'm enthusiastic, I like new challenges and creative.\par
+
+%--------------------SECTIONS-----------------------------------
+
+
+\section{Education}
+\begin{tabular}{r|p{11cm}}
+ \emph{Current} & \emph{Diplôme d'ingénieur en informatique} - ISIMA, Clermont Ferrand \\\textsc{Sept 2017}&\emph{Institut Supérieur d'Informatique, de Modélisation et de leurs Applications}\\&\emph{F5 - Réseaux et Sécurité informatique}\\&\footnotesize{Equivalent to a Graduate School of Engineering in Computer Science, with a specialization in Network and Security. This school delivers a diploma equivalent to a Master’s Degree in Engineering.} \\ & \footnotesize{Expected
+year of completion: 2020.}\\\multicolumn{2}{c}{} \\
+ \textsc{Sept 2015 - Jul 2017} & \emph{Classes Préparatoires aux Grandes Ecoles} - Lycée Jacques Decour, Paris\\&\emph{MP (Mathématiques et Physique) - Option Sciences de l'Ingénieur}\\&\footnotesize{Two-year preparatory course for the competitive examination admission to a French "Grande Ecole". }\\&\footnotesize{Maths and Physics Specialization, Engineer Science Option.}\\\multicolumn{2}{c}{} \\
+\textsc{Jul 2015} & \emph{Baccalauréat Scientifique, Mention Assez Bien} - Lycée Van Gogh, Ermont \\&\footnotesize{Equivalent to A levels obtained with honours.}\\\multicolumn{2}{c}{} \\
+\textsc{Jul 2015} & \emph{Bachillerato, Double Baccalauréat espagnol} - Lycée Van Gogh, Ermont \\&\footnotesize{Equivalent to Double Degree in Spain, .}
+\end{tabular}
+
+%Section: Education
+\section{\\\\\\Projects}
+\begin{tabular}{rl}	
+\textsc{1st year ISIMA} & Graph Coloring 
+\\&\footnotesize{The purpose was to find all graphs which avec between five and eight nodes.} 
+\\ &\footnotesize{ - Coding with SageMath in the Bash to find the algorithm.}
+\\ &\footnotesize{ - Making reports with LaTeX in English.}
+\\\\\textsc{Project in CPGE} & The Cryptosystem RSA
+\\&\footnotesize{The purpose was to understand how it work and to recreate it.} 
+\\ &\footnotesize{ - Understand and analyze RSA algorithm and write a mathematical explanation.}
+\\ &\footnotesize{ - Coding in Python many function to recreate it.} \\\\
+\textsc{Project of Last Year} & Mars' Terraforming 
+\\ in High School &\footnotesize{The purpose was to see if Mars' terraforming plan is possible or not.} 
+\\ &\footnotesize{ - Understand the issues and needs of this plan.}
+\\ &\footnotesize{ - Create a protocol for laboratory experiments and follow it.} \\
+\end{tabular}
+\newpage
+\section{Skills}
+\begin{tabular}{rl}
+Object Oriented Languages :& \textsc{C++, Python}\\
+Functional Programming :& \textsc{Scheme}\\
+Database Programming :& \textsc{SQL}\\
+Web Programming :& \textsc{HTML, CSS} \\
+Other Languages :& \textsc{C, Bash, LaTeX, SageMath}\\
+Versioning Management :& \textsc{Git} \\
+Languages :& \textsc{French (native), English (advanced), Spanish (advanced),} \\& \textsc{Portuguese (intermediate)}
+\end{tabular}
+
+\section{Associative and Volunteering}
+\begin{tabular}{rl}
+Since 2018 :& \textsc{Communication Responsible -} \emph{WEI}\\
+& \footnotesize{Club which prepares the integration weekend for new students in a campsite}\\
+\\& \textsc{Barkeeper -} \emph{IsiMalt} \\
+& \footnotesize{Zythology club of the ISIMA} \\
+\\& \textsc{Fans Responsible -} \emph{BDS} \\
+& \footnotesize{Sport Office of the ISIMA} \\
+\\ Jul 2016 - Aug 2016 : & \textsc{Barkeeper - }Portugal \\ & \footnotesize{Bar of the association of my town in Portugal}
+\end{tabular}
+
+\section{Activities and Hobbies}
+\begin{tabular}{rl}
+Great sports fan : & \textsc{Soccer, Rugby and American Football} \\
+Musician : & \textsc{11 years of Horn in my city's orchestra} \\
+Other : & \textsc{Video Games, Series, Enigmas / Logical Puzzle}
+\end{tabular}
+
+
+\end{document}
